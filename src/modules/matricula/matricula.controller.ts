@@ -19,7 +19,7 @@ import {
   updateStatusMatriculaSchema,
 } from './dto/update-matricula.dto';
 
-@Controller('matricula')
+@Controller('matriculas')
 export class MatriculaController {
   constructor(private readonly matriculaService: MatriculaService) {}
 

@@ -16,7 +16,7 @@ import {
 } from './dto/update-curso.dto';
 import { ZodValidationPipe } from 'src/pipe/zod-validation.pipe';
 
-@Controller('curso')
+@Controller('cursos')
 export class CursoController {
   constructor(private readonly cursoService: CursoService) {}
 
