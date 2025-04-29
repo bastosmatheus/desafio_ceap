@@ -39,7 +39,7 @@ export class AlunoRepository {
   }
 
   public async delete(aluno: Aluno) {
-    const alunoDeleted = await this.alunoRepository.delete(aluno);
+    const alunoDeleted = await this.alunoRepository.remove(aluno);
 
     return alunoDeleted;
   }

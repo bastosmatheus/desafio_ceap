@@ -20,9 +20,13 @@ export const createAlunoSchema = z.object({
     required_error: 'Informe o curso do aluno',
   }),
   data_nascimento: z
-    .string({})
-    .refine((value) => {
-      return new Date(value);
+    .string()
+    .refine((val) => !isNaN(Date.parse(val)), {
+      message: 'Data inválida',
+    })
+    .transform((val) => new Date(val))
+    .refine((date) => date < new Date(), {
+      message: 'A data deve estar no passado',
     })
     .optional(),
 });

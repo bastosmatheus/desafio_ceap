@@ -8,7 +8,7 @@ export class AlunoService {
   constructor(private alunoRepository: AlunoRepository) {}
 
   public async getAll() {
-    return this.alunoRepository.getAll();
+    return await this.alunoRepository.getAll();
   }
 
   public async getById(id: number) {
@@ -38,9 +38,6 @@ export class AlunoService {
     alunoExists.email = updateAlunoDto.email
       ? updateAlunoDto.email
       : alunoExists.email;
-    alunoExists.curso = updateAlunoDto.curso
-      ? updateAlunoDto.curso
-      : alunoExists.curso;
     alunoExists.data_nascimento = updateAlunoDto.data_nascimento
       ? new Date(updateAlunoDto.data_nascimento)
       : alunoExists.data_nascimento;
