@@ -1,0 +1,19 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+@if (isRouteHome()) {
+<div>
+  <a href="/alunos"
+    >Área de alunos (cadastro, visualização geral e remoção de um aluno)</a
+  >
+
+  <a href="/cursos"
+    >Área de cursos (cadastro, visualização geral e remoção de um curso)</a
+  >
+
+  <a href="/matriculas"
+    >Área de matriculas (cadastro, visualização geral e remoção de uma
+    matricula)</a
+  >
+</div>
+}
