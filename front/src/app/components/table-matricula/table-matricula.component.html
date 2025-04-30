@@ -1,0 +1,39 @@
+<div class="container">
+  <section>
+    <p>Tabela de matriculas</p>
+    <button class="button-new" (click)="openModal()">Nova matricula</button>
+  </section>
+
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Data da matricula</th>
+          <th>Status</th>
+          <th>ID do curso</th>
+          <th>ID do aluno</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (matriculas.length > 0) { @for (matricula of matriculas; track
+        matricula.id) {
+        <tr>
+          <td>{{ matricula.id }}</td>
+          <td>{{ matricula.status }}</td>
+          <td>{{ matricula.curso_id }}</td>
+          <td>{{ matricula.aluno_id }}</td>
+          <td class="exclude">
+            <button (click)="deleteMatricula($event)">Excluir matricula</button>
+          </td>
+        </tr>
+        } }
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<app-form-matricula
+  [isModalOpen]="isModalOpen"
+  (close)="isModalOpen = false"
+></app-form-matricula>

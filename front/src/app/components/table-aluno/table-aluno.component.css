@@ -1,0 +1,139 @@
+.container {
+  margin: 3rem;
+}
+
+.container p {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.container section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.button-new {
+  background-color: #0091ff;
+  border-radius: .5rem;
+  border: 1px solid #000000;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .75rem;
+
+  cursor: pointer;
+
+  transition: .75s all;
+}
+
+.button-new:hover {
+  opacity: .7;
+}
+
+.table {
+  background-color: #ffffff;
+
+  border: 2px solid #e4e4e4;
+  border-radius: 1rem;
+  font-size: .875rem;
+
+  text-align: center;
+
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: #fafafa;
+  color: #667085;
+
+  font-weight: 600;
+}
+
+thead th {
+  border-bottom: 1px solid #e4e4e4;
+
+  padding: 1rem;
+
+  vertical-align: middle;
+}
+
+
+tbody td {
+  border-bottom: 1px solid #e4e4e4;
+
+  vertical-align: middle;
+
+  padding: 1rem;
+}
+
+.table__image {
+  max-width: 4rem;
+}
+
+.table__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.table__buttons i {
+  border-radius: .5rem;
+
+  font-size: 1.25rem;
+
+  padding: .5rem;
+
+  cursor: pointer;
+}
+
+.table__buttons .ph-pen {
+  background-color: #0091ff31;
+  color: #0091ff;
+
+  transition: .75s all;
+}
+
+.table__buttons .ph-trash-simple {
+  background-color: #f0443845;
+  color: #F04438;
+
+  transition: .75s all;
+}
+
+.exclude {
+  background-color: #f0443845;
+  color: #F04438;
+
+  transition: .75s all;
+}
+
+.exclude button {
+  border: 1px solid #000000;
+  border-radius: .5rem;
+  background-color: transparent;
+
+  padding: .5rem;
+
+  cursor: pointer;
+
+  transition: 1s all;
+}
+
+.exclude button:hover {
+  color: #ffffff;
+  background-color: red;
+
+  padding: .5rem;
+}

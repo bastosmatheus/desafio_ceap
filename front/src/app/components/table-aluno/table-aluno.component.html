@@ -1,0 +1,38 @@
+<div class="container">
+  <section>
+    <p>Tabela de alunos</p>
+    <button class="button-new" (click)="openModal()">Novo aluno</button>
+  </section>
+
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Data de nascimento</th>
+          <th>:</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (alunos.length > 0) { @for (aluno of alunos; track aluno.id) {
+        <tr>
+          <td>{{ aluno.id }}</td>
+          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.email }}</td>
+          <td>{{ aluno.data_nascimento }}</td>
+          <td class="exclude">
+            <button (click)="deleteAluno($event)">Excluir aluno</button>
+          </td>
+        </tr>
+        } }
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<app-form-aluno
+  [isModalOpen]="isModalOpen"
+  (close)="isModalOpen = false"
+></app-form-aluno>

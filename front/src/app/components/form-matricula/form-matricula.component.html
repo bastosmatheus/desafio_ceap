@@ -1,0 +1,80 @@
+@if (isModalOpen) {
+<div class="modal">
+  <form [formGroup]="form">
+    <button (click)="closeModal()">X</button>
+    <div>
+      <label for="data_matricula">Data de matricula</label>
+
+      <input
+        id="data_matricula"
+        name="data_matricula"
+        type="text"
+        placeholder="Informe a date de matricula do aluno"
+        formControlName="data_matricula"
+      />
+
+      @if(form.controls['data_matricula'].errors?.['required'] &&
+      form.controls['data_matricula'].touched) {
+      <span class="form-error">A data de matricula do aluno é obrigatória</span>
+      }
+    </div>
+
+    <div>
+      <label for="status"
+        >Status da matricula (Ativa, Cancelada ou Concluida)</label
+      >
+
+      <input
+        id="status"
+        name="status"
+        type="text"
+        placeholder="Informe o status da matricula do aluno"
+        formControlName="status"
+      />
+
+      @if(form.controls['status'].errors?.['required'] &&
+      form.controls['status'].touched) {
+      <span class="form-error"
+        >O status da matricula do aluno é obrigatório</span
+      >
+      }
+    </div>
+
+    <div>
+      <label for="curso_id">ID do curso</label>
+
+      <input
+        id="curso_id"
+        name="curso_id"
+        type="number"
+        placeholder="Informe o ID do curso"
+        formControlName="curso_id"
+      />
+
+      @if(form.controls['curso_id'].errors?.['required'] &&
+      form.controls['curso_id'].touched) {
+      <span class="form-error">O ID do curso é obrigatório</span>
+      }
+    </div>
+
+    <div>
+      <label for="aluno_id">ID do aluno</label>
+
+      <input
+        id="aluno_id"
+        name="aluno_id"
+        type="number"
+        placeholder="Informe o ID do aluno"
+        formControlName="aluno_id"
+      />
+
+      @if(form.controls['aluno_id'].errors?.['required'] &&
+      form.controls['aluno_id'].touched) {
+      <span class="form-error">O ID do aluno é obrigatório</span>
+      }
+    </div>
+
+    <input type="submit" (click)="createCurso()" value="Criar matricula" />
+  </form>
+</div>
+}

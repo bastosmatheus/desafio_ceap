@@ -1,0 +1,35 @@
+<div class="container">
+  <section>
+    <p>Tabela de cursos</p>
+    <button class="button-new" (click)="openModal()">Novo curso</button>
+  </section>
+
+  <section class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (cursos.length > 0) { @for (curso of cursos; track curso.id) {
+        <tr>
+          <td>{{ curso.id }}</td>
+          <td>{{ curso.nome }}</td>
+          <td>{{ curso.tipo }}</td>
+          <td class="exclude">
+            <button (click)="deleteCurso($event)">Excluir curso</button>
+          </td>
+        </tr>
+        } }
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<app-form-curso
+  [isModalOpen]="isModalOpen"
+  (close)="isModalOpen = false"
+></app-form-curso>

@@ -1,0 +1,61 @@
+@if (isModalOpen) {
+<div class="modal">
+  <form [formGroup]="form">
+    <button (click)="closeModal()">X</button>
+    <div>
+      <label for="nome">Nome do aluno</label>
+
+      <input
+        id="nome"
+        name="nome"
+        type="text"
+        placeholder="Informe o nome do aluno"
+        formControlName="nome"
+      />
+
+      @if(form.controls['nome'].errors?.['required'] &&
+      form.controls['nome'].touched) {
+      <span class="form-error">O nome do aluno é obrigatório</span>
+      }
+    </div>
+
+    <div>
+      <label for="email">Email do aluno</label>
+
+      <input
+        id="email"
+        name="email"
+        type="text"
+        placeholder="Informe o email do aluno"
+        formControlName="email"
+      />
+
+      @if(form.controls['email'].errors?.['required'] &&
+      form.controls['email'].touched) {
+      <span class="form-error">O email do aluno é obrigatório</span>
+      }
+    </div>
+
+    <div>
+      <label for="data">Data de nascimento do aluno</label>
+
+      <input
+        id="data"
+        name="data"
+        type="text"
+        placeholder="Informe a data de nascimento do aluno"
+        formControlName="data_nascimento"
+      />
+
+      @if(form.controls['data_nascimento'].errors?.['required'] &&
+      form.controls['data_nascimento'].touched) {
+      <span class="form-error"
+        >A data de nascimento do aluno é obrigatória</span
+      >
+      }
+    </div>
+
+    <input type="submit" (click)="createAluno()" value="Criar aluno" />
+  </form>
+</div>
+}

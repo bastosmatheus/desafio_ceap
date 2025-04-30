@@ -1,0 +1,41 @@
+@if (isModalOpen) {
+<div class="modal">
+  <form [formGroup]="form">
+    <button (click)="closeModal()">X</button>
+    <div>
+      <label for="nome">Nome do curso</label>
+
+      <input
+        id="nome"
+        name="nome"
+        type="text"
+        placeholder="Informe o nome do curso"
+        formControlName="nome"
+      />
+
+      @if(form.controls['nome'].errors?.['required'] &&
+      form.controls['nome'].touched) {
+      <span class="form-error">O nome do curso é obrigatório</span>
+      }
+    </div>
+
+    <div>
+      <label for="tipo">Tipo do curso (Livre ou Técnico)</label>
+
+      <input
+        id="tipo"
+        name="tipo"
+        type="text"
+        placeholder="Informe o tipo do curso"
+        formControlName="tipo"
+      />
+
+      @if(form.controls['tipo'].errors?.['required'] &&
+      form.controls['tipo'].touched) {
+      <span class="form-error">O tipo do curso é obrigatório</span>
+      }
+    </div>
+    <input type="submit" (click)="createCurso()" value="Criar curso" />
+  </form>
+</div>
+}
