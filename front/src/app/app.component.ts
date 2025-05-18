@@ -1,21 +1,12 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { TableAlunoComponent } from './components/table-aluno/table-aluno.component';
-import { FormAlunoComponent } from './components/form-aluno/form-aluno.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  constructor(private router: Router) {}
-
   title = 'Desafio CEAP';
-
-  public isRouteHome() {
-    return this.router.url === '/';
-  }
 }
